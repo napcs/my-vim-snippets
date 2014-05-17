@@ -1,0 +1,92 @@
+## GRUNTFILE
+snippet gruntfile
+	'use strict';
+	module.exports = function(grunt){
+		${1}
+	};
+
+## Grunt task
+snippet gtask
+	grunt.registerTask('${1}', function(){
+		${0}		
+	});
+
+## Load npm tasks
+snippet gnpm
+	grunt.loadNpmTasks('${1}');
+
+snippet ginitconfig
+	grunt.initConfig({
+		${0}
+	});
+
+snippet gcg
+	grunt.config.get('${1}');
+
+snippet gll
+	grunt.log.writeln('${1}');
+
+snippet gw
+	grunt.warn('${1}');
+
+snippet gconfig
+	grunt.config('${1}', {
+		${2}: {
+			${0}
+		}
+	});
+
+snippet object
+	{
+		${0}
+	}
+snippet objectkey
+	${1}: {
+		${0}
+	}
+
+snippet anon
+	function(${1}){
+		${0}
+	}
+
+snippet listen
+	.addEventListener('${1}',event){
+		${0}
+	});
+
+snippet keyval
+	${1} : ${2}
+
+
+snippet dce
+	document.createElement('${1}');
+
+snippet dgt
+	document.getElementsByTagName('${1}');
+
+snippet dgi
+	document.getElementById('${1}');
+
+snippet ac
+	appendChild('${1}');
+
+
+snippet fo
+	for (var ${1:index} = 0, $1 < ${2}; $1++) {
+		${0}
+	}
+snippet prompt
+	prompt("${1}");
+
+snippet number
+	Number(${1});
+
+snippet tof
+	toFixed(${1:2});
+
+
+snippet dw
+	document.write(${1});
+snippet dw"
+	document.write("${1}");
