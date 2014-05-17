@@ -10,6 +10,20 @@ My cusomized shortcuts for vim's SnipMate plugin
 * `csslink` generates a `link` tag for CSS
 * `jqueryref` generates a call to load jQuery from CDN
 * `jslink` generates link to call external JS
+* `textfield` generates `label` and `input type="text"`
+* `textfieldbr` generates `label` and `input type="text"` with a `<br>` between
+* `textarea` generates `label` and `textarea`
+* `textareabr` generates `label` and `textarea` with a `<br>` between
+* `emailfield` generates `label` and `input type="email"`
+* `emailfieldbr` generates `label` and `input type="email"` with a `<br>` between
+* `select` generates `label` and `select` and a default `<option>`
+* `selectbr` generates `label` and `select` with a `<br>` between, with a default `<option>` between
+* `number` generates `label` and `input type="number"`
+* `numberbr` generates `label` and `input type="number"` with a `<br>` between
+* `checkbox` generates `label` and `input type="checkbox"`
+* `checkboxbr` generates `label` and `input type="checkbox"` with a `<br>` between
+* `radio` generates `label` and `input type="radio"`
+* `radiobr` generates `label` and `input type="radio"` with a `<br>` between
 
 ## Grunt
 
