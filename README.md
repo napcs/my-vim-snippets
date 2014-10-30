@@ -4,7 +4,7 @@ my-vim-snippets
 My cusomized shortcuts for vim's SnipMate plugin
 
 ## HTML
-* 'html5` generates an HTML5 skeleton
+* 'html5t` generates an HTML5 skeleton
 * `ijs` generates `script` blocks for inline JS
 * `image` generates image tag with alt
 * `csslink` generates a `link` tag for CSS
