@@ -8,10 +8,23 @@ snippet html5t
 			<link rel="stylesheet" href="stylesheets/style.css">
 		</head>
 		<body>
-			${0:body}
+			${0}
 		</body>
 	</html>
-
+snippet html5js
+	<!DOCTYPE html>
+	<html lang="en-US">
+		<head>
+			<meta charset="utf-8">
+			<title>${1:title}</title>
+			<link rel="stylesheet" href="stylesheets/style.css">
+		</head>
+		<body>
+			<script>
+				${0}
+			</script>
+		</body>
+	</html>
 snippet ijs
 	<script>
 	  ${0}
@@ -31,8 +44,7 @@ snippet jqueryref
 	}
 
 snippet jslink
-	<script src="${1:js/app.js}">
-	
+	<script src="${1:js/app.js}"></script>
 snippet textfield
 	<label for="${1}">${2}</label>
 	<input id="${1}" name="${1}" type="text">
@@ -55,7 +67,7 @@ snippet select
 	<label for="${1}">${2}</label>
 	<select>
 	  <option value=""></option>
-
+	  ${0}
 	</select>
 snippet radio
 	<input id="${1}" name="${1}" type="radio">
@@ -85,5 +97,13 @@ snippet selectbr
 	<label for="${1}">${2}</label><br>
 	<select>
 	  <option value=""></option>
-
+	  ${0}
 	</select>
+snippet brow
+	<div class="row">
+	  ${0}
+	</div>
+snippet bcol
+	<div class="col-sm-${1}">
+		${0}
+	</div>

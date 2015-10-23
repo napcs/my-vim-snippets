@@ -2,40 +2,32 @@
 snippet gruntfile
 	'use strict';
 	module.exports = function(grunt){
-		${1}
+		${0}
 	};
-
 ## Grunt task
 snippet gtask
 	grunt.registerTask('${1}', function(){
-		${0}		
+		${0}
 	});
-
 ## Load npm tasks
 snippet gnpm
-	grunt.loadNpmTasks('${1}');
-
+	grunt.loadNpmTasks('${0}');
 snippet ginitconfig
 	grunt.initConfig({
 		${0}
 	});
-
 snippet gcg
-	grunt.config.get('${1}');
-
+	grunt.config.get('${0}');
 snippet gll
-	grunt.log.writeln('${1}');
-
+	grunt.log.writeln('${0}');
 snippet gw
 	grunt.warn('${1}');
-
 snippet gconfig
 	grunt.config('${1}', {
 		${2}: {
 			${0}
 		}
 	});
-
 snippet object
 	{
 		${0}
@@ -44,49 +36,73 @@ snippet objectkey
 	${1}: {
 		${0}
 	}
-
 snippet anon
 	function(${1}){
 		${0}
 	}
-
-snippet listen
-	.addEventListener('${1}',event){
+snippet aelf
+	addEventListener('${1}', function(event){
 		${0}
 	});
-
 snippet keyval
 	${1} : ${2}
-
-
 snippet dce
 	document.createElement('${1}');
-
 snippet dgt
 	document.getElementsByTagName('${1}');
-
 snippet dgi
 	document.getElementById('${1}');
-
+snippet ael
+	addEventListener('${1}', ${0});
+snippet =>
+	${1} => {${0}}
 snippet ac
 	appendChild('${1}');
-
-
-snippet fo
-	for (var ${1:index} = 0, $1 < ${2}; $1++) {
-		${0}
-	}
 snippet prompt
-	prompt("${1}");
-
+	prompt('${1}');
 snippet number
 	Number(${1});
-
 snippet tof
 	toFixed(${1:2});
-
-
 snippet dw
-	document.write(${1});
+	document.write(${0});
 snippet dw"
-	document.write("${1}");
+	document.write("${0}");
+snippet note
+	// NOTE (`strftime("%Y-%m-%d")`) bph => ${0}
+snippet fixme
+	// FIXME (`strftime("%Y-%m-%d")`) bph => ${0}
+snippet todo
+	// TODO (`strftime("%Y-%m-%d")`) bph => ${0}
+snippet appConfig
+	window.appConfig = {
+	  onPageLoad: function(App) {
+	    ${0}
+	  }
+	};
+snippet ifappconfig
+	if(window.appConfig !== undefined) {
+		${0}
+	}
+snippet iah
+	insertAdjacentHTML("beforeend", "${1}");
+snippet ifenter
+	if (event.which === 13) {
+		${0}
+	}
+snippet schan
+	let channel = socket.channel(${1}, {})
+snippet cjoin
+	channel.join()
+		.receive("ok", resp => { ${1:console.log("Joined successfully"}, resp) })
+		.receive("error", resp => { ${2:console.log("Unable to join"}, resp) })
+snippet con
+	channel.on('${1}', (message) => {
+	  ${0}
+	});
+
+snippet cpush
+	channel.push("${1}", {${2}})
+		.receive("ok", payload => {${3}})
+		.after(2000, () => console.log("waited for 2s"));
+

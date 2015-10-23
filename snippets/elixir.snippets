@@ -1,0 +1,110 @@
+snippet note
+	# NOTE (`strftime("%Y-%m-%d")`) bph => ${1}
+snippet fixme
+	# FIXME (`strftime("%Y-%m-%d")`) bph => ${1}
+snippet todo
+	# TODO (`strftime("%Y-%m-%d")`) bph => ${1}
+
+snippet redirect
+	redirect conn,
+	  to: ${1}_path(conn, ${2}, ${3})
+snippet render
+	render conn, ${1}
+snippet ef
+	Enum.filter(fn(${1}) -> ${0} end)
+snippet efl
+	Enum.filter(${1}, fn(${2}) -> ${0} end)
+snippet em
+	Enum.map(fn(${1}) -> ${0} end)
+snippet eml
+	Enum.map(${1}, fn(${2}) -> ${0} end)
+snippet er
+	Enum.reduce(${1}, fn(${2}) -> ${0} end)
+snippet erf
+	Enum.reduce(${1}, ${2}, fn(${3}) -> ${0} end)
+snippet ej
+	Enum.join
+snippet ttl
+	Tuple.to_list
+snippet sha
+	:crypto.hash(:sha, ${0})
+snippet encode16
+	Base.encode16
+snippet slice
+	String.slice(${0})
+snippet join
+	def join(${0}, message, socket) do
+	  {:ok, socket}
+	end
+snippet inspect
+	IO.inspect ${0}
+
+snippet broadcast_from
+	broadcast_from! socket, "${0}", message
+
+snippet handle_in
+	def handle_in(${1}, message, socket) do
+		${0}
+		{:reply, {:ok, message}, socket}
+	end
+snippet if_ok
+	defmacrop if_ok(input, call) do
+		quote do
+			case unquote(input) do
+				:conversion_error -> :conversion_error
+				number -> unquote(Macro.pipe(quote(do: number), call, 0))
+			end
+		end
+	end
+snippet escript
+	defp escript_config do
+		[ main_module: ${0} ]
+	end
+snippet genserver
+	defmodule ${1:Myapp.Name} do
+		use GenServer
+		@name ${2:module_name}
+
+		require Logger
+
+		def start_link(opts \\\ []) do
+			GenServer.start_link(__MODULE__, :ok, opts ++ [name: $2])
+		end
+
+		def init(_) do
+			Logger.info "Starting $1..."
+			{:ok, %{} }
+		end
+	end
+snippet extwitter_config
+	config :ex_twitter, :oauth, [
+		consumer_key: System.get_env("${1:MYAPP}_TWITTER_CONSUMER_KEY"),
+		consumer_secret: System.get_env("$1_TWITTER_CONSUMER_SECRET"),
+		access_token: System.get_env("$1_TWITTER_ACCESS_TOKEN"),
+		access_token_secret: System.get_env("$1_TWITTER_ACCESS_SECRET")
+	]
+snippet handle_cast
+	def handle_cast({${1}}, state) do
+		${0}
+		{:noreply, state}}
+	end
+snippet pchannel
+	defmodule ${1:MYAPP.Something}Channel do
+		use Phoenix.Channel
+		${0}
+	end
+snippet dep_oauth
+	{:oauth, github: "tim/erlang-oauth"},
+snippet dep_extwitter
+	{:extwitter, "~> 0.2"},
+snippet spawn
+	spawn fn ->
+		${0}
+	end
+snippet spawn_link
+	spawn_link fn ->
+		${0}
+	end
+snippet ExTwitter.sf
+	ExTwitter.stream_filter(track: ${1})
+
