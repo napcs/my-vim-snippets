@@ -27,6 +27,13 @@ My cusomized shortcuts for vim's SnipMate plugin
 * `radiobr` generates `label` and `input type="radio"` with a `<br>` between
 * `brow` generates a `div` with class `row`
 * `bcol` generates a `div` with class `col-sm-` and a placeholder
+* `bcolmd` generates a `div` with class `col-md-` and a placeholder
+* `btn-primary` generates a `button` with class `btn btn-primary`
+* `btn-secondary` generates a `button` with class `btn btn-secondary`
+* `abtn-primary` generates an `a` with class `btn btn-primary`
+* `abtn-secondary` generates an `a` with class `btn btn-secondary`
+* `viewport` generates a default meta viewport for mobile
+
 
 ## CSS
 
@@ -44,8 +51,6 @@ My cusomized shortcuts for vim's SnipMate plugin
 * `dgt` is `document.getElementsByTagName`
 * `dgi` is `document.getElementById`
 * `ac` is `appendChild`
-* `fo` is a simple for loop
-* `=>` is an ES6 callback with the `=>` function
 * `prompt` is a prompt box
 * `number` is the `Number` function
 * `tof` is `toFixed`
@@ -53,6 +58,10 @@ My cusomized shortcuts for vim's SnipMate plugin
 * `dw"` is `document.write("")`
 * `ael` is `addEventListener`
 * `iah` - `insertAdjacentHTML`
+* `forof` is a `for x of y` loop
+* `map` is a map function
+* `reduce` is a reduce function
+* `reduce>` is a reduce arrow function
 * `ifenter` - if event for character 13 found....
 * `todo` puts in a TODO with datestamp
 * `note` puts in a NOTE with datestamp
@@ -73,7 +82,7 @@ My cusomized shortcuts for vim's SnipMate plugin
 * `schan` - create a channel
 * `cjoin` - Join a channel with ok and error callbacks
 * `con` - Receive channel event
-* `cpush` - Push message to channel with receive and after callbacks
+* `cpush` - Push message to channel with receive callbacks
 
 
 ## Ruby

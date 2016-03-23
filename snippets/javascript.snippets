@@ -57,7 +57,7 @@ snippet ael
 snippet =>
 	${1} => {${0}}
 snippet ac
-	appendChild('${1}');
+	appendChild(${1});
 snippet prompt
 	prompt('${1}');
 snippet number
@@ -84,6 +84,22 @@ snippet ifappconfig
 	if(window.appConfig !== undefined) {
 		${0}
 	}
+snippet map
+	map(function(${1}) {
+	  ${2}
+	});
+snippet reduce
+	reduce(function(${1:prev}, ${2:curr}{
+	  $3
+	});
+snippet! reduce>
+	reduce( (${1:prev}, ${2:curr}) => $3 );
+snippet arrayrandom
+	${1:items}[Math.floor(Math.random() * ${1:items}.length)];
+snippet forof
+	for (${1:item} of ${2:items}) {
+	  ${0}
+	}
 snippet iah
 	insertAdjacentHTML("beforeend", "${1}");
 snippet ifenter
@@ -91,18 +107,16 @@ snippet ifenter
 		${0}
 	}
 snippet schan
-	let channel = socket.channel(${1}, {})
+	let channel = socket.channel(${1}, {});
 snippet cjoin
 	channel.join()
 		.receive("ok", resp => { ${1:console.log("Joined successfully"}, resp) })
-		.receive("error", resp => { ${2:console.log("Unable to join"}, resp) })
+		.receive("error", resp => { ${2:console.log("Unable to join"}, resp) });
 snippet con
-	channel.on('${1}', (message) => {
+	channel.on('${1}', (payload) => {
 	  ${0}
 	});
-
 snippet cpush
 	channel.push("${1}", {${2}})
 		.receive("ok", payload => {${3}})
-		.after(2000, () => console.log("waited for 2s"));
-
+		.receive("timeout", () => console.log("Timed out"));

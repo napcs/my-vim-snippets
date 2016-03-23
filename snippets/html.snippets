@@ -47,7 +47,7 @@ snippet jslink
 	<script src="${1:js/app.js}"></script>
 snippet textfield
 	<label for="${1}">${2}</label>
-	<input id="${1}" name="${1}" type="text">
+	<input id="${1}" name="${1}" type="text">${0}
 snippet textarea
 	<label for="${1}">${2}</label>
 	<textarea id="${1}" name="${1}"></textarea>
@@ -65,8 +65,8 @@ snippet checkbox
 	<label for="${1}">${2}</label>
 snippet select
 	<label for="${1}">${2}</label>
-	<select>
-	  <option value=""></option>
+	<select id="${1}">
+	  <option value="${3}">${4}</option>
 	  ${0}
 	</select>
 snippet radio
@@ -95,8 +95,8 @@ snippet radiobr
 	<label for="${1}">${2}</label>
 snippet selectbr
 	<label for="${1}">${2}</label><br>
-	<select>
-	  <option value=""></option>
+	<select id="${1}">
+	  <option value="${3}">${4}</option>
 	  ${0}
 	</select>
 snippet brow
@@ -107,3 +107,21 @@ snippet bcol
 	<div class="col-sm-${1}">
 		${0}
 	</div>
+snippet bcolmd
+	<div class="col-md-${1}">
+		${0}
+	</div>
+snippet btn-primary
+	<button class="btn btn-primary">${1}</button>
+snippet btn-secondary
+	<button class="btn btn-secondary">${1}</button>
+snippet btn-
+	<button class="btn btn-${1}">${2}</button>
+snippet abtn-primary
+	<a class="btn btn-primary" href="${1}">${2}</a>
+snippet abtn-secondary
+	<a class="btn btn-secondary" href="${1}">${2}</a>
+snippet abtn-
+	<a class="btn btn-${1}" href="${2}">${3}</a>
+snippet viewport
+	<meta name="viewport" content="width=device-width">
