@@ -1,0 +1,66 @@
+snippet HTML
+	import Html exposing(Html, $1)
+snippet ATTR
+	import Html.Attributes exposing($1)
+snippet EVENTS
+	import Html.Events exposing($1)
+snippet STARTAPP
+	import StartApp
+snippet STARTAPPSIMPLE
+	import StartApp.Simple as StartApp
+snippet TASKS
+	import Effects exposing (Effects, Never)
+	import Task exposing (Task)
+snippet HTTP
+	import Http
+snippet JSON
+	import Json.Decode as Json exposing ((:=))
+snippet typealias
+	type alias $1 =
+snippet structure
+	{ $2 : ${3:String}
+	, $4 : ${5:String}
+	}
+snippet StartApp.Simple
+	StartApp.start {model = model, view = view, update = update}
+
+snippet StartApp
+	app =
+		StartApp.start
+			{ init = init
+			, update = update
+			, view = view
+			, inputs = []
+			}
+
+	init : (Model, Effects Action)
+	init =
+		([], $1)
+snippet portrunner
+	port runner : Signal (Task Never ())
+	port runner =
+		app.tasks
+snippet main
+	main : Signal Html
+	main =
+		app.html
+snippet view
+	view : Signal.Address Action -> Model -> Html
+	view address model =
+		$1
+
+snippet update
+	update : Action -> Model -> (Model, Effects Action)
+	update action model =
+	case action of
+		$1 ->
+		  $0
+
+snippet Json.object2
+	$1 =
+		Json.object2 (\$2 $3 -> ($4 $2 $3))
+			("$2" := Json.string)
+			("$3" := Json.string)
+
+snippet Json.at
+	Json.at ["$1"] (Json.list $2)
