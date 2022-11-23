@@ -1,0 +1,30 @@
+## GRUNTFILE
+snippet gruntfile
+	'use strict';
+	module.exports = function(grunt){
+		${0}
+	};
+## Grunt task
+snippet gtask
+	grunt.registerTask('${1}', function(){
+		${0}
+	});
+## Load npm tasks
+snippet gnpm
+	grunt.loadNpmTasks('${0}');
+snippet ginitconfig
+	grunt.initConfig({
+		${0}
+	});
+snippet gcg
+	grunt.config.get('${0}');
+snippet gll
+	grunt.log.writeln('${0}');
+snippet gw
+	grunt.warn('${1}');
+snippet gconfig
+	grunt.config('${1}', {
+		${2}: {
+			${0}
+		}
+	});

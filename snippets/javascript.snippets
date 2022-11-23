@@ -1,33 +1,3 @@
-## GRUNTFILE
-snippet gruntfile
-	'use strict';
-	module.exports = function(grunt){
-		${0}
-	};
-## Grunt task
-snippet gtask
-	grunt.registerTask('${1}', function(){
-		${0}
-	});
-## Load npm tasks
-snippet gnpm
-	grunt.loadNpmTasks('${0}');
-snippet ginitconfig
-	grunt.initConfig({
-		${0}
-	});
-snippet gcg
-	grunt.config.get('${0}');
-snippet gll
-	grunt.log.writeln('${0}');
-snippet gw
-	grunt.warn('${1}');
-snippet gconfig
-	grunt.config('${1}', {
-		${2}: {
-			${0}
-		}
-	});
 snippet object
 	{
 		${0}
@@ -68,22 +38,6 @@ snippet dw
 	document.write(${0});
 snippet dw"
 	document.write("${0}");
-snippet note
-	// NOTE (`strftime("%Y-%m-%d")`) bph => ${0}
-snippet fixme
-	// FIXME (`strftime("%Y-%m-%d")`) bph => ${0}
-snippet todo
-	// TODO (`strftime("%Y-%m-%d")`) bph => ${0}
-snippet appConfig
-	window.appConfig = {
-	  onPageLoad: function(App) {
-	    ${0}
-	  }
-	};
-snippet ifappconfig
-	if(window.appConfig !== undefined) {
-		${0}
-	}
 snippet map
 	map(function(${1}) {
 	  ${2}
@@ -96,9 +50,15 @@ snippet! reduce>
 	reduce( (${1:prev}, ${2:curr}) => $3 );
 snippet arrayrandom
 	${1:items}[Math.floor(Math.random() * ${1:items}.length)];
+snippet forin
+	for (${1:prop} in ${2:obj}) {
+		if ($2.hasOwnProperty($1)) {
+			${0}
+		}
+	}
 snippet forof
-	for (${1:item} of ${2:items}) {
-	  ${0}
+	for (let ${1:elem} of ${2:obj}) {
+		${0}
 	}
 snippet iah
 	insertAdjacentHTML("beforeend", "${1}");
@@ -106,17 +66,37 @@ snippet ifenter
 	if (event.which === 13) {
 		${0}
 	}
-snippet schan
-	let channel = socket.channel(${1}, {});
-snippet cjoin
-	channel.join()
-		.receive("ok", resp => { ${1:console.log("Joined successfully"}, resp) })
-		.receive("error", resp => { ${2:console.log("Unable to join"}, resp) });
-snippet con
-	channel.on('${1}', (payload) => {
-	  ${0}
-	});
-snippet cpush
-	channel.push("${1}", {${2}})
-		.receive("ok", payload => {${3}})
-		.receive("timeout", () => console.log("Timed out"));
+snippet afb
+	(${1}) => {
+		${2}
+	}
+snippet afe
+	(${1}) => ${2}
+snippet tcf
+	try {
+		${1}
+	} catch (${2:err}) {
+		${3}
+	} finally {
+		${0}
+	}
+snippet tc
+	try {
+		${1}
+	} catch (${2:err}) {
+		${0}
+	}
+snippet tf
+	try {
+		${1}
+	} finally {
+		${0}
+	}
+snippet us
+	'use strict'
+snippet st
+	setTimeout(${2:function}, ${1:duration})
+snippet si
+	setInterval(${2:function}, ${1:duration})
+snippet imp
+	import ${1:module} from '${2:path}'

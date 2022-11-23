@@ -1,0 +1,14 @@
+snippet schan
+	let channel = socket.channel(${1}, {});
+snippet cjoin
+	channel.join()
+		.receive("ok", resp => { ${1:console.log("Joined successfully"}, resp) })
+		.receive("error", resp => { ${2:console.log("Unable to join"}, resp) });
+snippet con
+	channel.on('${1}', (payload) => {
+	  ${0}
+	});
+snippet cpush
+	channel.push("${1}", {${2}})
+		.receive("ok", payload => {${3}})
+		.receive("timeout", () => console.log("Timed out"));
