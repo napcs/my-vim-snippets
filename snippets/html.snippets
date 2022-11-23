@@ -4,8 +4,9 @@ snippet html5t
 	<html lang="en-US">
 		<head>
 			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<title>${1:title}</title>
-			<link rel="stylesheet" href="stylesheets/style.css">
+			<link rel="stylesheet" href="${2:/styles/style.css}">
 		</head>
 		<body>
 			${0}
@@ -16,8 +17,9 @@ snippet html5js
 	<html lang="en-US">
 		<head>
 			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1">
 			<title>${1:title}</title>
-			<link rel="stylesheet" href="stylesheets/style.css">
+			<link rel="stylesheet" href="${2:/styles/style.css}">
 		</head>
 		<body>
 			<script>
@@ -33,6 +35,8 @@ snippet ijs
 snippet image
 	<img src="${1}" alt="${2}">
 
+snippet metamobile
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 snippet csslink
 	<link rel="stylesheet" href="stylesheets/${1:style.css}">
 
